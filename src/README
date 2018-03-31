@@ -1,0 +1,25 @@
+(1) Assumption: (1)There is some ambiguity in the question. I assume I can not split the duplicate numbers into different groups
+    In other words, the items are partitioned by range. Based on this assumption, I try to find the way minimizing the maximum in any bins.
+    eg. {1, 1, 1, 1, 1, 2}, bins == 2
+    n == 1: 1 1 1 1 1 
+    n == 2: 2
+    Otherwise, the optimal answer would be the following, and the solution would be too straightforward
+    1 1 1 
+    1 1 2
+    eg. {1, 1, 2}, bins == 3
+    n == 1: 1 1
+    n == 2: 2
+    Otherwise, the optimal answer would be the following, and the solution would be too straightforward
+    1 
+    1
+    2
+    
+(2) Algorithm: Since the duplicate numbers are always in the same group. I use greedy algorithm to merge the neighbours that 
+    have the least group memebers in total until the number of groups are equal to the number of bins.
+(3) Data Structures: I use arraylist as the container when reading numbers from files because it is easy to append an
+    element to the end(O(1)). It is easy to sort the elements. On the next step, when grouping duplicate elements, I use
+    linked list as my data structure. If I still use the arraylist, when merge groups, the other (number of groups - 2) members
+    will be assigned accordingly. One the other hand, when removing an element in linked list, it only takes O(1) but finding
+    the element will take O(number of groups) in the worst case. Therefore, there is a kind of tradeoff.
+(4) Testing: I test my program incrementally to see if my member functions work as expected. I develop some member functions for 
+    testing, but I deleted them before submitting to make code clean. 

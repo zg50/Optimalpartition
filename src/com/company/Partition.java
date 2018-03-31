@@ -13,6 +13,7 @@ import java.io.*;
  * @since 2018-3-29
  */
 
+
 public class Partition {
 
     private int numBins;
@@ -146,19 +147,6 @@ public class Partition {
             }
             groups.add(new Node(count, tempList));
             numGroups++;
-        }
-    }
-
-    private void readTester() {
-        System.out.println(numBins);
-        System.out.println(items);
-    }
-
-    private void testGroup() {
-        System.out.println("number of groups " + numGroups);
-        for (int i = 0; i < groups.size(); i++) {
-            System.out.println(groups.get(i).size);
-            System.out.println(groups.get(i).list);
         }
     }
 }
